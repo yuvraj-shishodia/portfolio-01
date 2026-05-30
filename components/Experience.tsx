@@ -6,7 +6,7 @@ const experiences = [
   {
     company: "Celebal Technologies",
     role: "Data Engineering Intern",
-    period: "June 2025 – Present",
+    period: "June 2025 – August 2025",
     type: "Remote / Hybrid",
     points: [
       "Engineered a sales-focused data warehouse using dimensional modelling in SQL Server, enabling seamless integration and analytics across business units.",
@@ -19,7 +19,7 @@ const experiences = [
   {
     company: "YNV Solutions",
     role: "Open Source Contributor",
-    period: "2024 – Present",
+    period: "2025 – Present",
     type: "Remote",
     points: [
       "Built and maintain SwiftCause, a production SaaS donation platform serving real UK charities.",
@@ -49,7 +49,7 @@ export default function Experience() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-violet-500/60 via-violet-500/20 to-transparent hidden md:block" />
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-linear-to-b from-violet-500/60 via-violet-500/20 to-transparent hidden md:block" />
 
           <div className="space-y-8">
             {experiences.map((exp, i) => (
