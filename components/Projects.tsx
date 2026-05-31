@@ -28,6 +28,18 @@ const projects = [
     accent: "purple",
   },
   {
+    title: "AuthCorp",
+    subtitle: "AI-Powered Document Authentication Platform",
+    description:
+      "Enterprise-grade document forgery detection platform with 9 FastAPI microservices, blockchain anchoring, ELA/quantization/metadata forensic detectors, OCR, risk scoring, and a Next.js dashboard with real-time monitoring.",
+    tags: ["Next.js", "FastAPI", "Python", "PostgreSQL", "Redis", "Docker", "Blockchain"],
+    highlights: ["9 independent microservices deployed on Render", "Multi-layer AI forgery detection (ELA, quantization, metadata)", "Blockchain anchoring via Ethereum & Polygon"],
+    live: "https://authcorp-phi.vercel.app",
+    github: "https://github.com/yuvraj-shishodia/AuthCorp",
+    gradient: "from-emerald-600/20 to-teal-600/10",
+    accent: "emerald",
+  },
+  {
     title: "Ink & Think",
     subtitle: "Real-Time Multiplayer Drawing Game",
     description:
