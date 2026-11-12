@@ -6,7 +6,7 @@ import { Style } from "../ui/Style";
 const FACTS = [
   { k: "Location", v: PROFILE.location },
   { k: "Education", v: `${PROFILE.degree} — ${PROFILE.collegeShort}, ${PROFILE.graduationYear}` },
-  { k: "Current role", v: PROFILE.currentRole },
+  { k: "Latest role", v: PROFILE.latestRole },
   { k: "Email", v: PROFILE.email, href: `mailto:${PROFILE.email}` },
 ];
 

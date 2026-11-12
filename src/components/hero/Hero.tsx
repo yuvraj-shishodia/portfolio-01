@@ -150,7 +150,7 @@ export default function Hero() {
           <dl className="hero-facts mono">
             <div>
               <dt>Now</dt>
-              <dd>{PROFILE.currentRole}</dd>
+              <dd>{PROFILE.status}</dd>
             </div>
             <div>
               <dt>Based in</dt>

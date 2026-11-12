@@ -1,5 +1,5 @@
 // Single source of content for the site. Components only read from here.
-// Sources: résumés (latest: yuv_web_fresher.pdf, Nov 2026; earlier: yuv_w-resume.pdf, Web_dev_Resume.pdf)
+// Sources: résumés (latest: yuv_web_dev (3).pdf, Nov 2026; earlier: yuv_w-resume.pdf, Web_dev_Resume.pdf)
 // + AuthCorp from the previous portfolio.
 
 export type SectionId =
@@ -19,12 +19,13 @@ export const PROFILE = {
   email: "yuvrajshishodia24@gmail.com",
   location: "India",
   resumeSummary:
-    "B.Tech (IT) 2026 graduate and full-stack developer who spent a year at YNV Solutions, converted from intern to full-time, building a production multi-tenant payments platform with Next.js, TypeScript, and Stripe. Seeking a software developer role to keep building scalable, user-facing products.",
+    "B.Tech (IT) 2026 graduate and full-stack developer with a one-year software engineering internship at YNV Solutions, building a production multi-tenant payments platform with Next.js, TypeScript, and Stripe. Seeking a software developer role to keep building scalable, user-facing products.",
   heroLine: "Full-stack developer building production, multi-tenant products with Next.js, TypeScript and Stripe.",
   aboutExtra:
-    "Currently a Software Engineer at YNV Solutions — converted from intern to full-time — building SwiftCause, a multi-tenant donation platform for UK nonprofits.",
+    "Spent a year as a Software Engineer Intern at YNV Solutions, building SwiftCause — a multi-tenant donation platform for UK nonprofits.",
   quote: "Scalable, user-facing products — built to run in production.",
-  currentRole: "Software Engineer @ YNV Solutions",
+  status: "Open to software developer roles",
+  latestRole: "Software Engineer Intern @ YNV Solutions",
   degree: "B.Tech, Information Technology",
   college: "Ajay Kumar Garg Engineering College",
   collegeShort: "AKGEC",
@@ -118,9 +119,9 @@ export type Experience = {
 export const EXPERIENCE: Experience[] = [
   {
     org: "YNV Solutions",
-    role: "Software Engineer (Full-time)",
-    period: "Jul 2026 – Present",
-    start: "2026-07",
+    role: "Software Engineer Intern",
+    period: "Nov 2025 – Nov 2026",
+    start: "2025-11",
     mode: "Remote",
     points: [
       "Built SwiftCause, a multi-tenant donation platform for UK nonprofits using Next.js, React and TypeScript, integrating Stripe Connect for one-time and recurring donations with direct payouts to charities.",
@@ -129,15 +130,6 @@ export const EXPERIENCE: Experience[] = [
       "Set up transactional email with Brevo for donation receipts and onboarding, adding deduplication and audit-logged delivery tracking.",
     ],
     tech: ["Next.js", "React.js", "TypeScript", "Firebase", "Stripe"],
-  },
-  {
-    org: "YNV Solutions",
-    role: "Software Engineer Intern",
-    period: "Nov 2025 – Jun 2026",
-    start: "2025-11",
-    mode: "Remote",
-    points: ["Joined the SwiftCause team as an intern and converted to a full-time Software Engineer in July 2026."],
-    tech: [],
   },
   {
     org: "Celebal Technologies",
