@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "ClaudeInChromeDomain(www.naukri.com)"
-    ]
-  }
-}
