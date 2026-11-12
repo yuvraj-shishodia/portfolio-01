@@ -13,7 +13,7 @@ type Stop =
 
 // Education and experience on one chronological path.
 const STOPS: Stop[] = [
-  ...EXPERIENCE.map((e) => ({ kind: "work" as const, key: e.org, start: e.start, year: e.start.slice(0, 4), data: e })),
+  ...EXPERIENCE.map((e) => ({ kind: "work" as const, key: `${e.org}-${e.start}`, start: e.start, year: e.start.slice(0, 4), data: e })),
   ...EDUCATION.map((e) => ({ kind: "edu" as const, key: e.school, start: e.start, year: e.start.slice(0, 4), data: e })),
 ].sort((a, b) => a.start.localeCompare(b.start));
 

@@ -16,6 +16,14 @@ export function MiniUI({ kind }: { kind: MiniUiKind }) {
   );
 }
 
+// Title-bar widths (%) of the sketch cards in each board column.
+const TASK_COLUMNS = [
+  { name: "To do", tasks: [70, 52] },
+  { name: "In progress", tasks: [82, 60, 44] },
+  { name: "Blocked", tasks: [56] },
+  { name: "Done", tasks: [66, 48] },
+];
+
 const VIEWS: Record<MiniUiKind, React.ReactNode> = {
   kiosk: (
     <div className="mui-kiosk">
@@ -39,6 +47,38 @@ const VIEWS: Record<MiniUiKind, React.ReactNode> = {
         <span>Monthly</span>
       </div>
       <span className="mui-k-cta">Donate</span>
+    </div>
+  ),
+  tasks: (
+    <div className="mui-tasks">
+      <div className="mui-t-top">
+        <div className="mui-seg">
+          <span className="is-on">Admin</span>
+          <span>Employee</span>
+        </div>
+        <span className="mui-t-chip">Filter</span>
+        <span className="mui-t-chip is-ink">CSV ↓</span>
+      </div>
+      <div className="mui-cols">
+        {TASK_COLUMNS.map((col) => (
+          <div key={col.name} className={`mui-col ${col.name === "Done" ? "is-done" : ""}`}>
+            <small>
+              {col.name}
+              <span>{col.tasks.length}</span>
+            </small>
+            {col.tasks.map((w, i) => (
+              <div
+                key={i}
+                className={`mui-task ${col.name === "Blocked" ? "is-blocked" : ""} ${col.name === "Done" && i === 0 ? "is-new" : ""}`}
+              >
+                <i style={{ width: `${w}%` }} />
+                <i />
+                <span className="mui-ava xs" />
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   ),
   forensics: (
@@ -150,6 +190,24 @@ const CSS = `
 .mui-k-toggle div{flex:1}.mui-k-toggle em{font-style:normal;font-family:var(--font-mono);font-size:11px;padding:3px 8px;border-radius:999px;background:var(--soft)}
 .mui-k-recur{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .mui-k-cta{margin-top:auto;display:grid;place-items:center;height:42px;border-radius:999px;background:var(--ink);color:#fff;font-weight:600}
+.mui-tasks{display:flex;flex-direction:column;gap:10px}
+.mui-t-top{display:flex;align-items:center;gap:6px}
+.mui-seg{display:flex;padding:3px;border-radius:999px;background:#fff;box-shadow:var(--hairline)}
+.mui-seg span{padding:4px 10px;border-radius:999px;font-size:10.5px;font-weight:600}.mui-seg .is-on{background:var(--ink);color:#fff}
+.mui-t-chip{padding:5px 10px;border-radius:999px;background:#fff;box-shadow:var(--hairline);font-family:var(--font-mono);font-size:10px}
+.mui-t-chip:first-of-type{margin-left:auto}.mui-t-chip.is-ink{background:var(--ink);color:#fff;box-shadow:none}
+.mui-cols{flex:1;min-height:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}
+.mui-col{display:flex;flex-direction:column;gap:6px;padding:7px;border-radius:12px;background:#f1efeb;min-width:0}
+.mui-col>small{display:flex;justify-content:space-between;gap:4px;font-family:var(--font-mono);font-size:9px;text-transform:uppercase;
+  letter-spacing:.03em;white-space:nowrap;overflow:hidden}
+.mui-task{display:flex;flex-direction:column;gap:5px;padding:8px;border-radius:9px;background:#fff;box-shadow:var(--hairline)}
+.mui-task i{display:block;height:5px;border-radius:3px;background:#dedbd5}.mui-task i:first-child{background:var(--ink)}
+.mui-task .mui-ava{align-self:flex-end}
+.mui-ava.xs{width:14px;height:14px}
+.mui-task.is-blocked{box-shadow:none;border:1.5px dashed var(--ink)}
+.mui-col.is-done .mui-task i:first-child{background:#b9b5ae}
+.mui-task.is-new{animation:mui-task 4.2s var(--ease) infinite}
+@keyframes mui-task{0%,18%{opacity:0;transform:translateY(-10px)}34%,100%{opacity:1;transform:none}}
 .mui-for{display:grid;grid-template-columns:1.1fr 1fr;gap:14px}
 .mui-doc{position:relative;border-radius:10px;background:#fff;box-shadow:var(--hairline);padding:16px 14px;display:flex;flex-direction:column;gap:8px;overflow:hidden}
 .mui-doc i{height:6px;border-radius:4px;background:#e6e4df}.mui-doc i.w60{width:60%}

@@ -32,6 +32,9 @@ export const BRAND: Record<string, { src: string; color: string }> = {
   Redis: { src: "redis.svg", color: "#FF4438" },
   Vitest: { src: "vitest.svg", color: "#6E9F18" },
   Stripe: { src: "stripe.svg", color: "#635BFF" },
+  Git: { src: "git.svg", color: "#F05032" },
+  SQLite: { src: "sqlite.svg", color: "#003B57" },
+  Playwright: { src: "playwright.svg", color: "#2EAD33" },
 };
 
 /** Thin line icons for concepts and honours, drawn on a 24px grid in currentColor. */

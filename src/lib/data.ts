@@ -1,5 +1,6 @@
 // Single source of content for the site. Components only read from here.
-// Sources: résumés (yuv_w-resume.pdf, Web_dev_Resume.pdf) + AuthCorp from the previous portfolio.
+// Sources: résumés (latest: yuv_web_fresher.pdf, Nov 2026; earlier: yuv_w-resume.pdf, Web_dev_Resume.pdf)
+// + AuthCorp from the previous portfolio.
 
 export type SectionId =
   | "about"
@@ -18,16 +19,16 @@ export const PROFILE = {
   email: "yuvrajshishodia24@gmail.com",
   location: "India",
   resumeSummary:
-    "Full-stack web developer skilled in React.js, Node.js, and Express.js with hands-on experience building and deploying production-grade applications. Seeking a Web Developer role to contribute to scalable, user-focused products by leveraging strong fundamentals in JavaScript, REST APIs, and database design.",
-  heroLine: "Full-stack web developer skilled in React.js, Node.js, and Express.js — building and deploying production-grade applications.",
+    "B.Tech (IT) 2026 graduate and full-stack developer who spent a year at YNV Solutions, converted from intern to full-time, building a production multi-tenant payments platform with Next.js, TypeScript, and Stripe. Seeking a software developer role to keep building scalable, user-facing products.",
+  heroLine: "Full-stack developer building production, multi-tenant products with Next.js, TypeScript and Stripe.",
   aboutExtra:
-    "Currently a Software Development Engineer at YNV Solutions, building SwiftCause — a multi-tenant donation platform for UK nonprofits.",
-  quote: "Scalable, user-focused products — built on strong fundamentals.",
-  currentRole: "Software Development Engineer @ YNV Solutions",
+    "Currently a Software Engineer at YNV Solutions — converted from intern to full-time — building SwiftCause, a multi-tenant donation platform for UK nonprofits.",
+  quote: "Scalable, user-facing products — built to run in production.",
+  currentRole: "Software Engineer @ YNV Solutions",
   degree: "B.Tech, Information Technology",
   college: "Ajay Kumar Garg Engineering College",
   collegeShort: "AKGEC",
-  graduation: "May 2026",
+  graduation: "June 2026",
   graduationYear: "2026",
   github: "https://github.com/yuvraj-shishodia",
   linkedin: "https://linkedin.com/in/yuvraj-shishodia",
@@ -35,7 +36,7 @@ export const PROFILE = {
   resume: "/Yuvraj-Shishodia-Resume.pdf",
 } as const;
 
-export type Family = "Languages" | "Frontend" | "Backend" | "Databases" | "Cloud & Deploy" | "Concepts";
+export type Family = "Languages" | "Frontend" | "Backend" | "Databases" | "Tools & Platforms" | "Concepts";
 
 export type Skill = { name: string; symbol: string; family: Family; usedIn?: string[] };
 
@@ -70,6 +71,7 @@ export const SKILL_GROUPS: { family: Family; skills: Skill[] }[] = [
       { name: "REST APIs", symbol: "Ra", family: "Backend" },
       { name: "Postman", symbol: "Pm", family: "Backend" },
       { name: "JWT", symbol: "Jw", family: "Backend" },
+      { name: "Socket.io", symbol: "So", family: "Backend" },
     ],
   },
   {
@@ -77,15 +79,19 @@ export const SKILL_GROUPS: { family: Family; skills: Skill[] }[] = [
     skills: [
       { name: "MySQL", symbol: "My", family: "Databases" },
       { name: "MongoDB", symbol: "Mg", family: "Databases" },
+      { name: "SQLite", symbol: "Sl", family: "Databases" },
       { name: "SQL Server", symbol: "Sq", family: "Databases" },
     ],
   },
   {
-    family: "Cloud & Deploy",
+    family: "Tools & Platforms",
     skills: [
-      { name: "Docker", symbol: "Dk", family: "Cloud & Deploy" },
-      { name: "Render", symbol: "Rn", family: "Cloud & Deploy", usedIn: ["AuthCorp"] },
-      { name: "Netlify", symbol: "Nf", family: "Cloud & Deploy", usedIn: ["2 Day Fitness", "Ink & Think"] },
+      { name: "Git", symbol: "Gt", family: "Tools & Platforms" },
+      { name: "Docker", symbol: "Dk", family: "Tools & Platforms" },
+      { name: "Playwright", symbol: "Pw", family: "Tools & Platforms" },
+      { name: "Stripe", symbol: "St", family: "Tools & Platforms" },
+      { name: "Render", symbol: "Rn", family: "Tools & Platforms", usedIn: ["EMS", "AuthCorp", "Ink & Think"] },
+      { name: "Netlify", symbol: "Nf", family: "Tools & Platforms", usedIn: ["2 Day Fitness"] },
     ],
   },
   {
@@ -112,17 +118,26 @@ export type Experience = {
 export const EXPERIENCE: Experience[] = [
   {
     org: "YNV Solutions",
-    role: "Software Development Engineer",
-    period: "Aug 2025 – Present",
-    start: "2025-08",
+    role: "Software Engineer (Full-time)",
+    period: "Jul 2026 – Present",
+    start: "2026-07",
     mode: "Remote",
     points: [
-      "Built SwiftCause, a multi-tenant donation platform for UK nonprofits with Next.js, React, TypeScript and Feature-Sliced Design, using Stripe Connect for one-time/recurring donations and direct charity payouts.",
-      "Engineered Gift Aid and GASDS compliance end-to-end: a donation claim-state machine, an HMRC-compliant CSV/ODS export pipeline and daily cron sweeps enforcing claim deadlines.",
-      "Implemented transactional email with Brevo — deduplication, audit-logged delivery tracking and race-safe handling of Firestore eventual consistency.",
-      "Designed role-based user management with a 5-tier permission hierarchy and organisation-scoped access control.",
+      "Built SwiftCause, a multi-tenant donation platform for UK nonprofits using Next.js, React and TypeScript, integrating Stripe Connect for one-time and recurring donations with direct payouts to charities.",
+      "Engineered end-to-end Gift Aid and GASDS compliance: a donation claim-state machine, an HMRC-compliant CSV/ODS export pipeline, and daily cron jobs that enforce claim deadlines and allowance caps.",
+      "Designed role-based access control with a 5-tier permission hierarchy, isolating each organisation’s users and data so admins can manage only their own tenant.",
+      "Set up transactional email with Brevo for donation receipts and onboarding, adding deduplication and audit-logged delivery tracking.",
     ],
     tech: ["Next.js", "React.js", "TypeScript", "Firebase", "Stripe"],
+  },
+  {
+    org: "YNV Solutions",
+    role: "Software Engineer Intern",
+    period: "Nov 2025 – Jun 2026",
+    start: "2025-11",
+    mode: "Remote",
+    points: ["Joined the SwiftCause team as an intern and converted to a full-time Software Engineer in July 2026."],
+    tech: [],
   },
   {
     org: "Celebal Technologies",
@@ -153,13 +168,13 @@ export const EDUCATION: Education[] = [
   {
     school: "Ajay Kumar Garg Engineering College",
     title: "B.Tech, Information Technology",
-    period: "May 2026",
-    start: "2026-05",
+    period: "June 2026",
+    start: "2026-06",
     detail: "Bachelor of Technology in Information Technology — class of 2026.",
   },
 ];
 
-export type MiniUiKind = "kiosk" | "forensics" | "gym" | "canvas";
+export type MiniUiKind = "kiosk" | "tasks" | "forensics" | "gym" | "canvas";
 
 export type Project = {
   id: string;
@@ -195,8 +210,28 @@ export const PROJECTS: Project[] = [
     ui: "kiosk",
   },
   {
-    id: "authcorp",
+    id: "ems",
     index: "02",
+    title: "EMS",
+    kicker: "Employee task management workspace",
+    description:
+      "A multi-tenant task workspace with admin and employee roles: admins assign and track tasks and workload; employees accept, complete or flag tasks as blocked.",
+    features: [
+      "Board view, filters & CSV export",
+      "Admin and employee roles, per-workspace data isolation",
+      "Auth on Node’s built-in HTTP server: scrypt hashing, HttpOnly sessions",
+      "Google sign-in & login rate limiting",
+      "API tests on real SQLite + Playwright browser tests",
+      "Containerised with Docker, deployed on Render",
+    ],
+    tech: ["React.js", "Node.js", "SQLite", "Playwright", "Docker"],
+    live: "https://ems-ks1w.onrender.com/",
+    github: "https://github.com/yuvraj-shishodia/ems",
+    ui: "tasks",
+  },
+  {
+    id: "authcorp",
+    index: "03",
     title: "AuthCorp",
     kicker: "AI-powered document authentication",
     description:
@@ -214,7 +249,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "2dayfitness",
-    index: "03",
+    index: "04",
     title: "2 Day Fitness",
     kicker: "Full stack gym website",
     description:
@@ -231,7 +266,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: "inkandthink",
-    index: "04",
+    index: "05",
     title: "Ink & Think",
     kicker: "Real-time multiplayer drawing game",
     description:
@@ -243,7 +278,8 @@ export const PROJECTS: Project[] = [
       "500+ words, word packs, chat & leaderboard",
     ],
     tech: ["React.js", "Node.js", "Express.js", "Socket.io"],
-    live: "https://inkandthinkbypc.netlify.app/",
+    live: "https://ink-and-think-gocl.onrender.com/",
+    // github.com/yuvraj-shishodia/ink-and-think is private — add `github` here once it is public.
     ui: "canvas",
   },
 ];
@@ -329,7 +365,7 @@ export const ID_CARD = {
   back: [
     "Full Stack Developer",
     "B.Tech IT · AKGEC · 2026",
-    "Built SwiftCause, AuthCorp & Ink & Think",
+    "Built SwiftCause, EMS & Ink & Think",
     "Inter-State Athletics gold medalist",
     "Best Startup Idea Award winner",
   ],
@@ -372,7 +408,7 @@ export const ELEMENTS = SKILL_GROUPS.flatMap((g) => g.skills).map((s, i) => {
     s.usedIn ??
     [
       ...PROJECTS.filter((p) => p.tech.includes(s.name)).map((p) => p.title),
-      ...EXPERIENCE.filter((e) => e.tech.includes(s.name)).map((e) => e.org),
+      ...new Set(EXPERIENCE.filter((e) => e.tech.includes(s.name)).map((e) => e.org)),
     ];
   return { ...s, number: i + 1, usedIn };
 });
